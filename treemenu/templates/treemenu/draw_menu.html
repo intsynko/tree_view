@@ -1,0 +1,13 @@
+{% load static %}
+{% load filters %}
+<ul class="menu">
+    {% for node in menu_items %}
+        <li class="menu-item level-{{ node.level }}{% if node.is_active %} active{% endif %}{% if node.is_current %} current{% endif %}" style="margin-left: {{ node.level|mul:20 }}px;">
+            {% if node.is_active %}<span style="color:#1976d2;">&#9654;</span> {% endif %}
+            <a href="/{{ node.item.id }}">{{ node.item.title }}</a>
+            {% if node.children %}
+                {% include 'treemenu/draw_menu.html' with menu_items=node.children only %}
+            {% endif %}
+        </li>
+    {% endfor %}
+</ul> 

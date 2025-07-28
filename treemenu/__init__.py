@@ -1,0 +1,1 @@
+# Ensure templatetags are registered

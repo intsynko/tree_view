@@ -1,0 +1,22 @@
+{% load draw_menu %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная страница</title>
+    <style>
+        .menu { list-style: none; padding-left: 0; }
+        .menu-item { margin: 4px 0; }
+        .menu-item.active > a { font-weight: bold; color: #1976d2; }
+        .menu-item.current > a { text-decoration: underline; }
+        .submenu { margin-left: 20px; list-style: none; padding-left: 0; }
+    </style>
+</head>
+<body>
+    <h1>Главная страница</h1>
+    <nav>
+        {% draw_menu 'main_menu' %}
+    </nav>
+    <p>Добро пожаловать!</p>
+</body>
+</html> 
