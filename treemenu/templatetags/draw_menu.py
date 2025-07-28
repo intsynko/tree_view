@@ -14,7 +14,6 @@ def draw_menu(context, menu_name):
     items = list(
         MenuItem.objects
         .filter(menu__name=menu_name)
-        .select_related('parent')
         .order_by('order', 'id')
     )
     if not len(items):
